@@ -1,9 +1,9 @@
 // Iteration 2: Generate 2 random number and display it on the screen
-let number1 =Math.floor(Math.random()*100);
+let number1 =Math.round(Math.random()*100);
 const number1box=document.getElementById("number1");
 console.log(number1," :number1")
 number1box.innerHTML=number1;
-let number2 = Math.floor(Math.random()*100);
+let number2 = Math.round(Math.random()*100);
 const number2box=document.getElementById("number2");
 console.log(number2," :number2")
 number2box.innerHTML=number2;
@@ -21,9 +21,9 @@ greaterThan.onclick=()=>{
     else{
         location.href="./gameover.html"
     }
-    number1=Math.floor(Math.random()*100);
+    number1=Math.round(Math.random()*100);
     number1box.innerHTML=number1;
-    number2=Math.floor(Math.random()*100);
+    number2=Math.round(Math.random()*100);
     number2box.innerHTML=number2;
     
 };
@@ -36,9 +36,9 @@ equalTo.onclick=()=>{
     else{
         location.href="./gameover.html"
     }
-    number1=Math.floor(Math.random()*100);
+    number1=Math.round(Math.random()*100);
     number1box.innerHTML=number1;
-    number2=Math.floor(Math.random()*100);
+    number2=Math.round(Math.random()*100);
     number2box.innerHTML=number2;
 };
 lesserThan.onclick=()=>{
@@ -50,9 +50,9 @@ lesserThan.onclick=()=>{
     else{
         location.href="./gameover.html"
     }
-    number1=Math.floor(Math.random()*100);
+    number1=Math.round(Math.random()*100);
     number1box.innerHTML=number1;
-    number2=Math.floor(Math.random()*100);
+    number2=Math.round(Math.random()*100);
     number2box.innerHTML=number2;
 };
 
@@ -66,9 +66,10 @@ function startTimer(){
     timer.innerHTML=time;
     timerId =setInterval(()=>{
         time--;
-        if(yime<=0){
+        if(time==0){
             location.href="./gameover.html"
         }
+        timer.innerHtml=time;
     },1000);
     localStorage.setItem("score",score)
 
